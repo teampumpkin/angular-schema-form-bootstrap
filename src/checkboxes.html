@@ -7,6 +7,7 @@
          schema-validate="form"
          ng-show="showTitle()">{{form.title}}</label>
 
+  <div class="{{ form.fieldWrapperHtmlClass }}">
   <div class="checkbox" ng-repeat="val in titleMapValues track by $index" >
     <label>
       <input type="checkbox"
@@ -20,4 +21,5 @@
 
   </div>
   <div class="help-block" sf-message="form.description"></div>
+  </div>
 </div>

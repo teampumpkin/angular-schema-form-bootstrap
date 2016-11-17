@@ -2,6 +2,7 @@
      ng-class="{ '{{'schema-form-' + form.type}}': true, 'has-error': form.disableErrorState !== true && hasError(), 'has-success': form.disableSuccessState !== true && hasSuccess(), 'has-feedback': form.feedback !== false }">
   <label class="control-label {{form.labelHtmlClass}}" ng-class="{'sr-only': !showTitle()}" for="{{form.key.slice(-1)[0]}}">{{form.title}}</label>
 
+  <div class="{{ form.fieldWrapperHtmlClass }}">
   <input ng-if="!form.fieldAddonLeft && !form.fieldAddonRight"
          ng-show="form.key"
          type="{{form.type}}"
@@ -49,4 +50,5 @@
         class="sr-only">{{ hasSuccess() ? '(success)' : '(error)' }}</span>
 
   <div class="help-block" sf-message="form.description"></div>
+  </div>
 </div>
