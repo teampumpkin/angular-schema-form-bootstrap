@@ -1,14 +1,18 @@
-<div class="checkbox schema-form-checkbox {{form.htmlClass}}"
+<div class="form-group  schema-form-checkbox {{form.htmlClass}}"
      ng-class="{'has-error': form.disableErrorState !== true &&  hasError(), 'has-success': form.disableSuccessState !== true &&  hasSuccess()}">
-  <label class="{{form.labelHtmlClass}}">
+  <label class="control-label {{form.labelHtmlClass}}" for="{{form.key.slice(-1)[0]}}" >
+    {{form.title}}
+  </label>
+
+  <div class="{{ form.fieldWrapperHtmlClass }}">
     <input type="checkbox"
            sf-changed="form"
+           id="{{form.key.slice(-1)[0]}}"
            ng-disabled="form.readonly"
            sf-field-model
            schema-validate="form"
            class="{{form.fieldHtmlClass}}"
            name="{{form.key.slice(-1)[0]}}">
-    <span ng-bind-html="form.title"></span>
-  </label>
-  <div class="help-block" sf-message="form.description"></div>
+    <div class="help-block" sf-message="form.description"></div>
+  </div>
 </div>
